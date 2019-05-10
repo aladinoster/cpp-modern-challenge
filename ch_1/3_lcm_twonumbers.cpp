@@ -4,18 +4,20 @@ Write a program that will, given two or more positive integers, calculate and pr
 #include <iostream>
 // using namespace std;
 
-int isprime(unsigned int a)
+unsigned int gcd(unsigned int a, unsigned int b)
 {
-    unsigned int i = 2;
-    while (i <= a)
+    while (b != 0)
     {
-        if (a % i == 0)
-        {
-            return false;
-        }
-        i++;
+        unsigned int r = a % b;
+        a = b;
+        b = r;
     }
-    return true;
+    return a;
+}
+int lcm(int const a, int const b)
+{
+    int h = gcd(a, b);
+    return h ? (a * (b / h)) : 0;
 }
 
 int main(int argc, char const *argv[])
@@ -27,9 +29,6 @@ int main(int argc, char const *argv[])
     std::cout << "Please enter number 2: " << std::endl;
     std::cin >> number_2;
 
-    for (unsigned int i = 2; isprime(i); i++)
-    {
-        std::cout << i;
-    }
+    std::cout << "The least common multiple is: " << lcm(number_1, number_2) << std::endl;
     return 0;
 }
