@@ -1,6 +1,7 @@
 /*
-Write a program that computes and prints the largest prime number that is smaller than a number provided by the user, which must be a positive integer.
+Write a program that prints all the sexy prime pairs up to a limit entered by the user.
 */
+
 #include <iostream>
 
 bool is_prime(int const num)
@@ -26,6 +27,7 @@ bool is_prime(int const num)
         return true;
     }
 }
+
 int main(int argc, char const *argv[])
 {
     /* code */
@@ -34,14 +36,12 @@ int main(int argc, char const *argv[])
     std::cout << "Enter a n upper bound: ";
     std::cin >> limit;
 
-    for (int i = limit; i > 1; i--)
+    for (int i = 2; i < limit; i++)
     {
-        if (is_prime(i))
+        if (is_prime(i) && is_prime(i + 6))
         {
-            std::cout << "Largest prime before " << limit << " is: " << i << std::endl;
-            return 0;
+            std::cout << "Pair found: (" << i << "," << i + 6 << ")" << std::endl;
         }
     }
-
     return 0;
 }
