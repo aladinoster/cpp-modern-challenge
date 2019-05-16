@@ -41,7 +41,7 @@ int main(int argc, char const *argv[])
             std::cout << "Largest prime before " << limit << " is: " << i << std::endl;
             return 0;
         }
-    }
+    } 
 
     return 0;
 }
