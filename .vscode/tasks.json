@@ -44,6 +44,9 @@
                 "${fileDirname}/build/${fileBasenameNoExtension}.out",
                 "--debug"
             ],
+            "problemMatcher": [
+                "$gcc"
+            ],
         }
     ]
 }
