@@ -1,13 +1,25 @@
 /*
     Gray code a.k.a reflected bynary code
 
-    Two consecutive numbers differ by only one bit 
+    Two consecutive numbers differ by only one bit. 
+
+    Gray enconding is equivalent to apply  the following formula 
+
+    if b[i-1]=1 then g[i]= not b[i]
+    else g[i]=b[i]
+
+    This is equivalent to 
+
+    g = b xor (b logically right shifted 1 time)
 */
+
+#include <string>
 #include <iostream>
+#include <bitset>
 
 unsigned int gray_encode(unsigned int const num)
 {
-    return num ^ (num >> 1);
+    return num ^ (num >> 1); // shift + xor bitwise
 }
 
 unsigned int gray_decode(unsigned int gray)
